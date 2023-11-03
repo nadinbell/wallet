@@ -1,0 +1,17 @@
+.cardContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border: 1px solid grey;
+	border-radius: 5px;
+	background-color: #FFFFFF;
+}
+
+.isSelected {
+	box-shadow: 0 0 0 1px blue;
+}
+
+.cardIssuer {
+
+}
+

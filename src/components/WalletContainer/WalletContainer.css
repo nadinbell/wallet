@@ -1,0 +1,18 @@
+.walletContainer {
+	padding: 0 20px;
+	width: 700px;
+	height: 500px;
+	display: flex;
+	flex-direction: row;
+	background-color: yellow;
+}
+
+.leftPanel {
+	width: 30%;
+	background-color: #8e8e93;
+}
+
+.rightPanel {
+	width: 70%;
+	background-color: #f6f6f7;
+}
