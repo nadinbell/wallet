@@ -1,25 +1,25 @@
 import { useState } from "react";
 import omit from "lodash.omit";
-import { getCardById  } from "../utils/common";
-import { Card } from "../types/interfaces";
+import { ICard } from "../types/interfaces";
+import { cardData } from "../data/data";
 
-export const useCards = (cardData: Card[]) => {
+export const useCards = () => {
+	const [ cards, setCards ] = useState<ICard[]>(cardData);
 
-	const [cardId, setCardId] = useState(cardData[0].id);
+	const addCard = (cardNumber: string, expirationDate: string) => {
+		const newCard = {
+			id: Math.random().toString(),
+			cardNumber,
+			expirationDate
+		};
+		setCards(existedCards => [newCard, ...existedCards]);
+	};
 	
-	const selectedCard = getCardById(cardData, cardId);
-	const cardTransactions = selectedCard?.transactions;
-	const cards = cardData.map(card => omit(card, "transactions"));
-	const currentBalance = selectedCard?.currentBalance;
-	const selectCard = (id: string) => setCardId(id); 
-
-	console.log({cardId})
+	const cardsInfo = cards.map(card => omit(card, "transactions"));
 
 	return {
-		currentBalance: currentBalance,
-		cards: cards,
-		transactions: cardTransactions,
-		selectedCardId: cardId,
-		selectCard: selectCard,
+		cards: cards, 
+		cardsInfo: cardsInfo,
+		addCard: addCard,
 	}
 }

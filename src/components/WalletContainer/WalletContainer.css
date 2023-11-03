@@ -5,14 +5,15 @@
 	display: flex;
 	flex-direction: row;
 	background-color: yellow;
+	overflow: hidden;
 }
 
 .leftPanel {
-	width: 30%;
+	width: 40%;
 	background-color: #8e8e93;
 }
 
 .rightPanel {
-	width: 70%;
+	width: 60%;
 	background-color: #f6f6f7;
 }

@@ -5,7 +5,7 @@ export enum CardIssuer {
 	Maestro = "MAESTRO"
 }
 
-export interface Transaction {
+export interface ITransaction {
 	id: string;
 	name: string;
 	details: string;
@@ -13,12 +13,17 @@ export interface Transaction {
 	amount: number;
 }
 
-export interface ICard {
+export interface CardInfo {
 	id: string;
-	issuer: CardIssuer;
-	number: string;
+	issuer?: CardIssuer;
+	cardNumber: string;
 	expirationDate: string;
-	currentBalance: number;
-	currency: "EUR" | "USD";
-	transactions: Transaction[];
+	currentBalance?: number;
+	currency?: "EUR" | "USD";
 }
+
+export interface ICard extends CardInfo {
+	transactions?: ITransaction[];
+}
+
+export type NewCardInfo = Pick<CardInfo, "cardNumber" | "expirationDate">

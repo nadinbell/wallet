@@ -1,0 +1,9 @@
+.transactionsContainer {
+	padding: 20px;
+}
+
+.transaction {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}

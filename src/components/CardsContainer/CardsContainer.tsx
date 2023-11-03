@@ -1,11 +1,11 @@
-import { ICard } from "../../types/interfaces";
+import { CardInfo } from "../../types/interfaces";
 import { Card } from "../Card/Card";
 import "./CardsContainer.css";
 
 interface CardsContainerProps {
 	selectedCardId: string,
-	cards: Omit<ICard, "transactions">[],
-	onSelectCard: () => void,
+	cards: CardInfo[],
+	onSelectCard: (id: string) => void,
 }
 export const CardsContainer = ({selectedCardId, cards, onSelectCard}: CardsContainerProps ) => {
 	return (
@@ -15,7 +15,7 @@ export const CardsContainer = ({selectedCardId, cards, onSelectCard}: CardsConta
 					key={card.id}
 					id={card.id} 
 					issuer={card.issuer} 
-					number={card.number} 
+					cardNumber={card.cardNumber} 
 					expirationDate={card.expirationDate} 
 					isSelected={selectedCardId === card.id}
 					onSelectCard={onSelectCard} 
