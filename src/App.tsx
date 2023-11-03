@@ -1,12 +1,12 @@
-import './App.css'
-import { WalletContainer } from './components/WalletContainer/WalletContainer'
+import "./App.css";
+import { WalletContainer } from "./components/WalletContainer/WalletContainer";
 
 function App() {
   return (
     <>
-			<WalletContainer />
+      <WalletContainer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

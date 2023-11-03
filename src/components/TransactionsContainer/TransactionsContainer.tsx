@@ -3,17 +3,15 @@ import { Transaction } from "./Transaction";
 import "./Transactions.css";
 
 interface TransactionContainerProps {
-	transactions: ITransaction[]
+  transactions: ITransaction[];
 }
 
 export const TransactionsContainer = ({ transactions }: TransactionContainerProps) => {
-	return (
-		<div className="transactionsContainer">
-			{
-				transactions.map(transaction => (
-					<Transaction {...transaction} />
-				))
-			}
-		</div>
-	)
+  return (
+    <div className="transactionsContainer">
+      {transactions.map((transaction) => (
+        <Transaction {...transaction} />
+      ))}
+    </div>
+  );
 };
