@@ -9,8 +9,8 @@ interface TransactionContainerProps {
 export const TransactionsContainer = ({ transactions }: TransactionContainerProps) => {
   return (
     <div className="transactionsContainer">
-      {transactions.map((transaction) => (
-        <Transaction {...transaction} />
+      {transactions.map((transaction, index) => (
+        <Transaction key={index} {...transaction} />
       ))}
     </div>
   );
