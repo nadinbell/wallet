@@ -4,11 +4,11 @@ import "./Card.css";
 
 interface CardProps {
   id: string;
-  issuer?: CardIssuer;
   cardNumber: string;
   expirationDate: string;
   isSelected: boolean;
   onSelectCard: (id: string) => void;
+  issuer?: CardIssuer;
 }
 
 export const Card = ({ id, issuer, cardNumber, expirationDate, isSelected, onSelectCard }: CardProps) => {
