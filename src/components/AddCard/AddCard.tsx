@@ -3,9 +3,10 @@ import classNames from "classnames";
 import "./AddCard.css";
 
 interface AddCardProps {
-  onAddCard: (cardNumber: string, expirationDate: string) => void;
+  addCard: (cardNumber: string, expirationDate: string) => void;
 }
-export const AddCard = ({ onAddCard }: AddCardProps) => {
+
+export const AddCard = ({ addCard }: AddCardProps) => {
   const [isModalOpen, setModalOpen] = useState(false);
   const cardNumberRef = useRef<HTMLInputElement>(null);
   const expirationDateRef = useRef<HTMLInputElement>(null);
@@ -14,8 +15,7 @@ export const AddCard = ({ onAddCard }: AddCardProps) => {
     // TODO: add validation
     const cardNumber = cardNumberRef.current?.value;
     const expirationDate = expirationDateRef.current?.value;
-    console.log({ cardNumber, expirationDate });
-    onAddCard(cardNumber, expirationDate);
+    addCard(cardNumber, expirationDate);
     setModalOpen((value) => !value);
   };
 
