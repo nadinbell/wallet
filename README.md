@@ -10,3 +10,5 @@ TODO:
 - Convert Currency
 - Think about updating state by adding a card
 - Fix paths
+- Input validation
+- Error handling
